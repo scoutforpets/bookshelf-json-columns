@@ -84,7 +84,7 @@ export default Bookshelf => {
       // Stringify JSON columns.
       Object.keys(attributes).forEach(attribute => {
         if (this.jsonColumns.includes(attribute)) {
-          attributes[attribute] = JSON.stringify(attributes[attribute]);
+          attributes[attribute] = attributes[attribute] === null ? null : JSON.stringify(attributes[attribute]);
         }
       });
 
